@@ -54,12 +54,27 @@ sudo apt install snapd
 ```
 sudo apt install gnome-tweak-tool
 ```
-### 9. Install Gnome extensions
+### 12. Backup and Restore Gnome tweaks configuration
+
+Backup
+```
+cd ~
+dconf dump / > saved_settings.dconf
+```
+Restore
+```
+cd ~
+dconf load / < saved_settings.dconf
+```
 ### [Gnome extensions](https://extensions.gnome.org)
-![Screenshot from 2021-11-03 17-44-36.png](https://boostnote.io/api/teams/B7zGnc-ns/files/39e1b43e8464c7e5e7e49534a44875c4d59c4c52e3ba61d0623af205da0f078e-Screenshot%20from%202021-11-03%2017-44-36.png)
-![Screenshot from 2021-11-03 17-44-52.png](https://boostnote.io/api/teams/B7zGnc-ns/files/80d617414af04f0c1f0a59a7b52f7b4d6e40bfe421acfef234e60bcf12a72445-Screenshot%20from%202021-11-03%2017-44-52.png)
+![Screenshot from 2021-11-03 17-44-36.png](data/extensions_1.png)
+![Screenshot from 2021-11-03 17-44-52.png](data/extensions_2.png)
+
+### 13. Setup my dotfiles from my github
+### [.dotfiles repo](https://github.com/M-Mabrouk1/.dotfiles.git)
 
 
+### table syntax
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
 | Header      | Title       | Here's this   <br> 7amada |
