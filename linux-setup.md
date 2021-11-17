@@ -74,6 +74,10 @@ dconf load / < saved_settings.dconf
 ### [.dotfiles repo](https://github.com/M-Mabrouk1/.dotfiles.git)
 
 
+### 99. Miscellaneous 
+check tldr, dust, ripgrep
+
+
 ### table syntax
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
