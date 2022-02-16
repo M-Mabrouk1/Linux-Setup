@@ -1,21 +1,39 @@
 ---
-title: "Linux Setup"
+title: "Arch Linux Setup"
 tags: ""
 ---
 
-# Linux setup
+# Arch Linux setup
+
+## Base installation
+
+## list
+```
+pacman -S grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base base-devel linux-headers
+```
+## GRUB
+```
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+## Install paru AUR helper
+```
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+```
 
 ## Application installation
 
-### 1. Update and Upgrade and Remove bloatware
+### 1. My dot files
 ```
-sudo apt update
-sudo apt full-upgrade
-sudo apt purge ....
+git clone https://github.com/M-Mabrouk1/.dotfiles
 ```
-### 2. Install 3rd party codecs
+### 2. Set Zsh directory
 ```
-sudo apt-get install ubuntu-restricted-extras
+sudo vim /etc/zsh/zshenv
+export ZDOTDIR=$HOME/.config/zsh
 ```
 ### 3. Setup hybrid graphics
 ```
@@ -83,4 +101,3 @@ check tldr, dust, ripgrep
 | :---        |    :----:   |          ---: |
 | Header      | Title       | Here's this   <br> 7amada |
 | Paragraph   | Text        | And more      |
-
