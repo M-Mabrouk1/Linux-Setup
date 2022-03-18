@@ -35,14 +35,19 @@ git clone https://github.com/M-Mabrouk1/.dotfiles
 sudo vim /etc/zsh/zshenv
 export ZDOTDIR=$HOME/.config/zsh
 ```
-### 3. Setup hybrid graphics
+### 3. Setup environment variables
 ```
-sudo system76-power graphics hybrid
-sudo reboot now
+sudo vim /etc/environment
+QT_QPA_PLATFORMTHEME=qt5ct
+EDITOR=nvim
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
 ```
-### 4. Install piper for mouse control
+### 4. Install vim-plug
 ```
-sudo apt install piper
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 ### 5. Install extreme cooling for fan managing
 

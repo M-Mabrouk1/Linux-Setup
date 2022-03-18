@@ -68,7 +68,6 @@ lua
 lxappearance
 zsh
 lolcat
-lua
 neofetch
 neovim
 ntfs-3g
@@ -91,7 +90,7 @@ arandr
 nomacs
 piper
 peek
-xfce-power-manager
+xfce4-power-manager
 qbittorrent
 qt5ct
 stacer
@@ -103,7 +102,6 @@ nvidia-prime
 yt-dlp
 barrier
 gvfs-mtp
-
 )
 
 count=0
