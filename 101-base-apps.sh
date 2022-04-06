@@ -25,63 +25,9 @@ echo "Installation of the core software"
 ###############################################################################
 
 list=(
-sddm
-alacritty
-sxhkd
-dmenu
-feh
-picom
-polkit-gnome
-rofi
-rofi-emoji
-nemo
-git
-firefox
-expac
-bat
-htop
-duf
-lsd
-lua
-lxappearance
-zsh
-lolcat
-neofetch
-neovim
-ntfs-3g
-stow
-wget
-nemo-fileroller
-nemo-share
-bleachbit
-clementine
-copyq
-dconf-editor
-gnome-disk-utility
-fcitx5
-flameshot
-gparted
-kdeconnect
-meld
-lxrandr
-arandr
-nomacs
-piper
-peek
-xfce4-power-manager
-qbittorrent
-qt5ct
-zathura
-vlc
-xcolor
-nvtop
-nvidia-prime
-yt-dlp
-barrier
-gvfs-mtp
-playerctl
-python-pywal
-dunst
+polybar
+leftwm-dev-git
+leftwm-theme-git
 )
 
 count=0
@@ -95,10 +41,13 @@ done
 ###############################################################################
 
 tput setaf 5;echo "################################################################"
-echo "Enabling sddm as display manager"
+echo "Enabling leftwm theme"
 echo "################################################################"
 echo;tput sgr0
-sudo systemctl enable sddm.service -f
+leftwm-theme update
+sleep 10
+
+leftwm-theme apply neon-i
 
 tput setaf 7;echo "################################################################"
 echo "You now have a very minimal functional desktop"

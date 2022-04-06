@@ -1,24 +1,24 @@
 #!/bin/bash
 #set -e
 
-# func_uninstall() {
-# 	if pacman -Qi $1 &> /dev/null; then
-# 		tput setaf 2
-#   		echo "###############################################################################"
-#   		echo "################## The package "$1" is already installed"
-#       	echo "###############################################################################"
-#       	echo
-# 		tput sgr0
-# 	else
-#     	tput setaf 3
-#     	echo "###############################################################################"
-#     	echo "##################  Installing package "  $1
-#     	echo "###############################################################################"
-#     	echo
-#     	tput sgr0
-#     	sudo pacman -S --noconfirm --needed $1
-#     fi
-# }
+func_uninstall() {
+	if pacman -Qi $1 &> /dev/null; then
+		tput setaf 2
+  		echo "###############################################################################"
+  		echo "################## The package "$1" is being removed"
+      	echo "###############################################################################"
+      	echo
+		tput sgr0
+		sudo pacman -Rns --noconfirm $1
+	else
+    	tput setaf 3
+    	echo "###############################################################################"
+    	echo "##################  Package not installed "  $1
+    	echo "###############################################################################"
+    	echo
+    	tput sgr0
+    fi
+}
 # Here we remove applications we do not want
 echo
 tput setaf 2
@@ -28,22 +28,14 @@ echo "################################################################"
 tput sgr0
 echo
 
-sudo systemctl disable tlp.service
+readarray -t list <pkgs.txt
+# list=()
 
-sudo pacman -Rns tlp --noconfirm
-
-sudo pacman -Rns broadcom-wl-dkms --noconfirm
-
-sudo pacman -Rns r8168-dkms --noconfirm
-
-sudo pacman -Rns xf86-video-amdgpu --noconfirm
-sudo pacman -Rns xf86-video-fbdev --noconfirm
-sudo pacman -Rns xf86-video-openchrome --noconfirm
-sudo pacman -Rns xf86-video-vmware --noconfirm
-sudo pacman -Rns xf86-video-ati --noconfirm
-sudo pacman -Rns xf86-video-nouveau --noconfirm
-sudo pacman -Rns xf86-video-vesa --noconfirm
-
+for name in "${list[@]}" ; do
+	count=$[count+1]
+	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
+	func_uninstall $name
+done
 echo
 tput setaf 2
 echo "################################################################"
