@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=ExtremeCooling4Linux-Indicator
+Comment=ExtremeCooling4Linux switcher
+# Exec=ec4linux-applet
+Icon=ec4linuxindicator
+Terminal=false
+Type=Application
+Categories=GTK;GNOME;Settings;
+StartupNotify=false
+NoDisplay=true
