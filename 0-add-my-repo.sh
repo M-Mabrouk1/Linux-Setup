@@ -4,6 +4,7 @@ sudo pacman -S --noconfirm --needed wget
 sudo pacman -S --noconfirm --needed curl
 sudo pacman -S --noconfirm --needed git
 sudo pacman -S --noconfirm --needed stow
+sudo pacman -S --noconfirm --needed zsh
 
 # add my repo
 echo '

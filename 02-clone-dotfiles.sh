@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
 # clone dotfiles and stow
-git clone https://github.com/M-Mabrouk1/Dotfiles
-cd Dotfiles
+git -C /home/$USER clone https://github.com/M-Mabrouk1/Dotfiles
+cd /home/$USER/Dotfiles
 stow .
 
 # rm zsh plugins so they can be downloaded
-rm -rf .config/zsh/plugins/*
+rm -rf /home/$USER/Dotfiles/.config/zsh/plugins/*
+
+mkdir -p /home/$USER/.config/zhistory
+touch /home/$USER/.config/zhistory/.zhistory
 
 #install neovim
 sudo pacman -S --noconfirm --needed neovim
