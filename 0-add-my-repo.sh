@@ -12,8 +12,4 @@ echo '
 SigLevel = Optional TrustedOnly
 Server = https://m-mabrouk1.github.io/$repo/$arch' | sudo tee --append /etc/pacman.conf
 
-if systemd-detect-virt; then
-    echo 'xrandr --output Virtual-1 --primary --mode 1920x1080 --rotate normal' | sudo tee --append /usr/share/sddm/scripts/Xsetup
-else
-    echo "not virt"
-fi
+sudo pacman -Sy

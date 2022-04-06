@@ -100,6 +100,13 @@ echo "################################################################"
 echo;tput sgr0
 sudo systemctl enable sddm.service -f
 
+if systemd-detect-virt; then
+    echo 'xrandr --output Virtual-1 --primary --mode 1920x1080 --rotate normal' | sudo tee --append /usr/share/sddm/scripts/Xsetup
+	sudo pacman -S --noconfirm --needed spice-vdagent
+else
+    echo "not virt"
+fi
+
 tput setaf 7;echo "################################################################"
 echo "You now have a very minimal functional desktop"
 echo "################################################################"
