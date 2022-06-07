@@ -52,7 +52,7 @@ ntfs-3g
 stow
 wget
 nemo-fileroller
-nemo-share
+arcolinux-nemo-share
 bleachbit
 clementine
 copyq
